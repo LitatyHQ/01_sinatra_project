@@ -1,0 +1,35 @@
+[ ] - User can create, read, update and delete an appointment
+
+Interface:
+
+- User can view appointment
+- User can submit appointment
+- User can edit an appointment
+- User can delete/cancel appointment
+- “Here to facilitate your needs. Even if you’re not sure what that is. We will help discover that, together.”
+
+User class:
+- Attributes => name, password
+- User signs up/logs in
+- Has many orders
+
+User controller and views:
+- ‘/users/signup’ => readers sign up form
+- ‘/users/signup => processes sign up form, creates user, post
+- ‘/users/login’ => renders login form
+- ‘/users/login’ => processes login form, post
+- Need to set sessions
+- User can view their orders, ‘/users/:id/orders’
+
+Appointment class:
+- Attributes => date, time, therapist, insurance
+- Appointment belongs to user
+
+Appointment controller and views
+- ‘/appointments/new => renders new appointment 
+- ‘/appointments’ => sets appointment
+- ‘/appointments’ => renders all appointments
+- ‘/appointments/:id => renders one instance
+- ‘/appointments/:id/edit =>renders update form for an instance
+- ‘/appointments/:id => updates instance
+- ‘/appointments/:id:/delete’ => deletes instance
