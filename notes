@@ -32,4 +32,4 @@ x ‘/appointments’ => renders all appointments
 x ‘/appointments/:id => renders one instance
 x ‘/appointments/:id/edit =>renders update form for an instance
 x ‘/appointments/:id => updates instance, patch
-- ‘/appointments/:id:/delete’ => deletes instance
+x ‘/appointments/:id:/delete’ => deletes instance
