@@ -9,27 +9,27 @@ Interface:
 - “Here to facilitate your needs. Even if you’re not sure what that is. We will help discover that, together.”
 
 User class:
-- Attributes => name, password
+x Attributes => name, password
 - User signs up/logs in
-- Has many orders
+x Has many orders
 
 User controller and views:
-- ‘/users/signup’ => readers sign up form
-- ‘/users/signup => processes sign up form, creates user, post
+x ‘/users/signup’ => readers sign up form
+x ‘/users/signup => processes sign up form, creates user, post
 - ‘/users/login’ => renders login form
 - ‘/users/login’ => processes login form, post
 - Need to set sessions
 - User can view their orders, ‘/users/:id/orders’
 
 Appointment class:
-- Attributes => date, time, therapist, insurance
-- Appointment belongs to user
+x Attributes => date, time, therapist, insurance
+x Appointment belongs to user
 
 Appointment controller and views
-- ‘/appointments/new => renders new appointment 
-- ‘/appointments’ => sets appointment
-- ‘/appointments’ => renders all appointments
-- ‘/appointments/:id => renders one instance
-- ‘/appointments/:id/edit =>renders update form for an instance
-- ‘/appointments/:id => updates instance
+x ‘/appointments/new => renders new appointment 
+x ‘/appointments’ => sets appointment
+x ‘/appointments’ => renders all appointments
+x ‘/appointments/:id => renders one instance
+x ‘/appointments/:id/edit =>renders update form for an instance
+x ‘/appointments/:id => updates instance, patch
 - ‘/appointments/:id:/delete’ => deletes instance

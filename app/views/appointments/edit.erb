@@ -1,0 +1,36 @@
+<h1> Make changes to your appointment: </h1>
+
+<form action="/appointments/<%= @appointment.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+
+    Date:  
+    <input type=text value="<%= @appointment.date %>" name="date">
+    <br>
+    <p>
+    &emsp;&emsp;&emsp;&nbsp;MM/DD/YYYY
+    <br>
+    <P>
+    
+    Time: 
+    <input type=text value="<%= @appointment.time %>" name="time">
+    <br>
+    &emsp;&emsp;&emsp;&nbsp;00:00 am/pm
+    <br>
+    <p>
+
+    Therapist: 
+    <input type=text value="<%= @appointment.therapist %>" name="therapist">
+    <br>
+    &emsp;&emsp;&emsp;&nbsp;Last name only. If none preferred, submit N/A 
+    <br>
+    <p>
+
+    Insurance:  
+    <input type=text value="<%= @appointment.insurance %>" name="insurance">
+    <br>
+    &emsp;&emsp;&emsp;&nbsp;Company, Policy number. If you prefer to be billed later, submit N/A.
+    <br>
+    <p>
+
+    <input type="submit" name="btnSubmit" style="width:100px; height:50px;" value="Submit" />
+<form> 
