@@ -1,3 +1,4 @@
+<h3>Appointment: </h3><br>
 Date: <%= @appointment.date %><br>
 Time: <%= @appointment.time %><br>
 Therapist: <%= @appointment.therapist %><br>
@@ -5,7 +6,9 @@ Insurance: <%= @appointment.insurance %><br>
 <br>
 <p>
 
+<a href="/users/login"><input type="submit" style="width:200px; height:40px;" value="Return to Account Page"></a>
+
 <form method="post" action="/appointments/<%= @appointment.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" style="width:100px; height:50px;" value="DELETE">
+  <input type="submit" style="width:200px; height:40px; float: right;" align="right" value="DELETE Appointment">
 </form>

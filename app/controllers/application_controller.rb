@@ -13,10 +13,18 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  Helpers do
+  helpers do
     def logged_in? #returns a true or false value
-      !!sessions[:users_id] #boolean
+      !!session[:user_id] #boolean
     end
+  end
+
+  get '/appointments/new' do
+    erb :'/appointments/new'
+  end
+
+  get '/appointments/login' do
+    erb :'/appointments/login'
   end
 
 end

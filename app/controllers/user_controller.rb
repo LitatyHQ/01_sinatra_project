@@ -17,11 +17,13 @@ class UserController < ApplicationController
         end
     end
     
-    get '/users/login' do 
-         #if the user is logged in
-         #redirect to their home page
-         #else, show them the login form
-        erb :'/users/login'
+    get '/users/login' do
+         if !logged_in?
+            erb :'/users/login'
+         else
+            @user = User.find(session[:user_id])
+            redirect "/users/#{@user.id}"
+         end
     end
 
     post '/users/login' do
@@ -39,6 +41,11 @@ class UserController < ApplicationController
     get '/users/:id' do #show page, we render data of one instance
         @user = User.find(params[:id])
         erb :'/users/show'
+    end
+
+    get '/session/logout' do
+        session.clear
+        redirect '/'
     end
     
 end
