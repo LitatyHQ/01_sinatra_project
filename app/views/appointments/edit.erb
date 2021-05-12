@@ -1,7 +1,7 @@
 <h1> Make changes to your appointment: </h1>
 
 <form action="/appointments/<%= @appointment.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch">
+    <f.input :appointment_id, :type => "hidden" name="_method" value="patch">
 
     Date:  
     <input type="date" value="<%= @appointment.date %>" name="date"><span class="validity"></span>

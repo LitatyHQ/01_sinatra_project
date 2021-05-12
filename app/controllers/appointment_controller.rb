@@ -26,16 +26,12 @@ class AppointmentController < ApplicationController
 
 
     get '/appointments/:id/edit' do
-        if @appointment = Appointment.find(params[:id])
-            redirect '/appointments/edit'
-        else
-            redirect '/welcome'
-        end
-    
+        @appointment = Appointment.find(params[:id])
+        redirect '/appointments/edit'
     end
 
     post '/appointments/:id' do
-        if @appointment = Appointment.find(params[:id])
+        @appointment = Appointment.find(params[:id])
         @appointment.update(
             date: params[:date], 
             time: params[:time], 
@@ -43,9 +39,6 @@ class AppointmentController < ApplicationController
             insurance: params[:insurance]
             )
             redirect "/appointments/#{@appointment.id}"
-        else
-            redirect "/welcome"
-        end
     end
 
     delete '/appointments/:id' do
