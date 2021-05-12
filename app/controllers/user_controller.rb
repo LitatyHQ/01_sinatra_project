@@ -5,7 +5,7 @@ class UserController < ApplicationController
     end
 
     post '/users/signup' do
-        if params[:username] == "" && params[:password] == ""
+        if params[:username] == "" || params[:password] == "" || User.find_by(username: params[:username])
             redirect "/users/signup"
         else
         @user = User.create(
@@ -27,7 +27,6 @@ class UserController < ApplicationController
     end
 
     post '/users/login' do
-        #want to find the user, if it exists
         @user = User.find_by(username: params[:username])
 
         if @user && @user.authenticate(params[:password])
@@ -38,7 +37,7 @@ class UserController < ApplicationController
         end
     end
 
-    get '/users/:id' do #show page, we render data of one instance
+    get '/users/:id' do
         @user = User.find(params[:id])
         erb :'/users/show'
     end

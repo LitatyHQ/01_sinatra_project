@@ -1,7 +1,5 @@
 class AppointmentController < ApplicationController
 
-    #create
-
     get '/appointments/new' do
         erb :'/appointments/new'
     end
@@ -16,20 +14,16 @@ class AppointmentController < ApplicationController
         redirect "/appointments/#{@appointments.id}"
     end
 
-    #read
-
     get '/appointments/:id' do
         @appointment = Appointment.find(params[:id])
         erb :'/appointments/show'
     end
 
     get '/appointments' do
-        @appointments = Appointment.all #returns an array
+        @appointments = Appointment.all
         erb :'/appointments/index'
     end
 
-
-    #update
 
     get '/appointments/:id/edit' do
         @appointment = Appointment.find(params[:id])
@@ -47,9 +41,7 @@ class AppointmentController < ApplicationController
         redirect "/appointments/#{@appointment.id}"
     end
 
-    #delete
-
-    delete '/appointments/:id/' do
+    delete '/appointments/:id' do
       @appointment = Appointment.find(params[:id])
       @appointment.destroy
       redirect '/appointments'
