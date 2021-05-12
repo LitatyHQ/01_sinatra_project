@@ -2,33 +2,28 @@
 
 <form action='/appointments' method="POST">
     Date:  
-    <input type="date" name="date">
+    <input type="date" name="date"><span class="validity"></span>
     <br>
-    <p>
-    &emsp;&emsp;&emsp;&nbsp;MM/DD/YYYY
     <br>
-    <P>
     
     Time: 
-    <input type=text name="time">
+    <input id="appt-time" type="time" name="appt-time" min="08:00" max="20:00" required>
     <br>
-    &emsp;&emsp;&emsp;&nbsp;00:00 am/pm
     <br>
-    <p>
 
     Therapist: 
-    <input type=text name="therapist">
+    <input type="text" name="therapist">
     <br>
     &emsp;&emsp;&emsp;&nbsp;Last name only. If none preferred, submit N/A 
     <br>
-    <p>
+    <br>
 
     Insurance:  
-    <input type=text name="insurance">
+    <input type="text" name="insurance">
     <br>
     &emsp;&emsp;&emsp;&nbsp;Company, Policy number. If you prefer to be billed later, submit N/A.
     <br>
-    <p>
+    <br>
 
     <input type="submit" name="btnSubmit" style="width:100px; height:50px;" value="Submit" />
 <form> 

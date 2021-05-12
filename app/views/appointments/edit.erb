@@ -4,22 +4,19 @@
     <input id="hidden" type="hidden" name="_method" value="patch">
 
     Date:  
-    <input type=text value="<%= @appointment.date %>" name="date">
+    <input type="date" value="<%= @appointment.date %>" name="date"><span class="validity"></span>
     <br>
-    <p>
-    &emsp;&emsp;&emsp;&nbsp;MM/DD/YYYY
     <br>
-    <P>
     
     Time: 
-    <input type=text value="<%= @appointment.time %>" name="time">
+    <input type="text" value="<%= @appointment.time %>" name="time">
     <br>
     &emsp;&emsp;&emsp;&nbsp;00:00 am/pm
     <br>
     <p>
 
     Therapist: 
-    <input type=text value="<%= @appointment.therapist %>" name="therapist">
+    <input type="text" value="<%= @appointment.therapist %>" name="therapist">
     <br>
     &emsp;&emsp;&emsp;&nbsp;Last name only. If none preferred, submit N/A 
     <br>
