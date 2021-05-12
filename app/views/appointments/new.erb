@@ -2,17 +2,17 @@
 
 <form action='/appointments' method="POST">
     Date:  
-    <input type="date" name="date"><span class="validity"></span>
+    <input type="date" name="date" required>
     <br>
     <br>
     
     Time: 
-    <input id="appt-time" type="time" name="appt-time" min="08:00" max="20:00" required>
+    <input type="time" name="time" min="08:00" max="20:00" required>
     <br>
     <br>
 
     Email: 
-    <input type="email" placeholder="sophie@example.com">
+    <input type="email" name="email" placeholder="sophie@example.com" required>
     <br>
     <br>
 

@@ -44,7 +44,7 @@ class AppointmentController < ApplicationController
     delete '/appointments/:id' do
       @appointment = Appointment.find(params[:id])
       @appointment.destroy
-      redirect '/appointments'
+      redirect '/users/show'
     end
 
 
