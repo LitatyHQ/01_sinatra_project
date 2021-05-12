@@ -9,18 +9,14 @@
     <br>
     
     Time: 
-    <input type="text" value="<%= @appointment.time %>" name="time">
+    <input id="appt-time" type="time" value="<%= @appointment.time %>" name="appt-time" min="08:00" max="20:00" required>
     <br>
-    &emsp;&emsp;&emsp;&nbsp;00:00 am/pm
     <br>
-    <p>
 
-    Therapist: 
-    <input type="text" value="<%= @appointment.therapist %>" name="therapist">
+    Email: 
+    <input type="email" value="<%= @appointment.email %>" placeholder="sophie@example.com">
     <br>
-    &emsp;&emsp;&emsp;&nbsp;Last name only. If none preferred, submit N/A 
     <br>
-    <p>
 
     Insurance:  
     <input type=text value="<%= @appointment.insurance %>" name="insurance">

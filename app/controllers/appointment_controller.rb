@@ -8,7 +8,7 @@ class AppointmentController < ApplicationController
         @appointments = Appointment.create(
             date: params[:date], 
             time: params[:time], 
-            therapist: params[:therapist], 
+            email: params[:email], 
             insurance: params[:insurance]
         )
         redirect "/appointments/#{@appointments.id}"
@@ -35,7 +35,7 @@ class AppointmentController < ApplicationController
         @appointment.update(
             date: params[:date], 
             time: params[:time], 
-            therapist: params[:therapist], 
+            email: params[:email], 
             insurance: params[:insurance]
         )
         redirect "/appointments/#{@appointment.id}"

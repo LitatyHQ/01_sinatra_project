@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_155949) do
+ActiveRecord::Schema.define(version: 2021_05_12_034710) do
 
   create_table "appointments", force: :cascade do |t|
     t.string "date"
     t.string "time"
-    t.string "therapist"
+    t.string "email"
     t.string "insurance"
     t.integer "user_id"
   end
