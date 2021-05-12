@@ -27,4 +27,8 @@ class ApplicationController < Sinatra::Base
     erb :'/appointments/login'
   end
 
+  get '/welcome' do
+    erb :'/welcome'
+  end
+
 end
