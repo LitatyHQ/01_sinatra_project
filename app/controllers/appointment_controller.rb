@@ -9,7 +9,7 @@ class AppointmentController < ApplicationController
             date: params[:date], 
             time: params[:time], 
             email: params[:email], 
-            insurance: params[:insurance]
+            name: params[:name]
         )
         redirect "/appointments/#{@appointments.id}"
     end
@@ -24,42 +24,20 @@ class AppointmentController < ApplicationController
         erb :'/appointments/index'
     end
 
-
-    # get '/appointments/:id/edit' do
-    #     @appointment = Appointment.find(params[:id])
-    #     redirect '/appointments/edit'
-    # end
-
-    # post '/appointments/:id' do
-    #     @appointment = Appointment.find(params[:id])
-    #     @appointment.update(
-    #         date: params[:date], 
-    #         time: params[:time], 
-    #         email: params[:email], 
-    #         insurance: params[:insurance]
-    #         )
-    #         redirect "/appointments/#{@appointment.id}"
-    # end
-
-    get "/appointments/:id/edit" do
-        @appointments = appointments
-        redirect_if_not_authorized
-          erb :"/appointments/edit.html"
+    get '/appointments/:id/edit' do
+        @appointment = Appointment.find(params[:id])
+        redirect '/appointments/edit'
     end
 
-    patch "/appointments/:id" do
-        @appointments = appointments
-        if entry 
-            @appointment.update(
-                date: params[:date], 
-                time: params[:time], 
-                email: params[:email], 
-                insurance: params[:insurance]
-                )
-            redirect "/appointments/#{@appointment.id}"
-        else 
-            redirect '/appointments'
-        end
+    post '/appointments/:id' do
+        @appointment = Appointment.find(params[:id])
+        @appointment.update(
+            date: params[:date], 
+            time: params[:time], 
+            email: params[:email], 
+            name: params[:name]
+            )
+            redirect "/appointments/#{@appointment.id}/edit"
     end
 
     delete '/appointments/:id' do

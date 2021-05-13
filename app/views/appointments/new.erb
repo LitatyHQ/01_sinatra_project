@@ -1,47 +1,27 @@
 <h1> Schedule your new appointment: </h1>
 <br>
 
-<form action="SEND ADDRESS" id="ft-form" method="POST" accept-charset="UTF-8">
-
-  <fieldset>
-  <br>
-    <div class="two-cols">
-      <label>
-        Date:
+<form action='/appointments' method="POST">
+    Date:
         <input type="date" name="date" required>
-        </label>
-        <br>
-        <br>
-        <label>
-        Time
+    <br>
+    <br>
+
+    Time
         <input type="time" name="time" min="08:00" max="20:00" required>
-        </label>
-    </div>
-    <br>
-  </fieldset>
-  <br>
-  <br>
-  <fieldset>
-    <legend> We would like to know more about you. </legend>
-    <br>
-    <label>
-      Name:
-      <input type="text" name="name" required>
-    </label>
     <br>
     <br>
-    <div class="two-cols">
-      <label>
-        Email:
+
+    Email:
         <input type="email" name="email" placeholder="sophie@example.com" required>
-        </label>
-        <br>
-        <br>
-    </div>
-  </fieldset>
-  <br>
-  <br>
-  <div class="btns">
-  <input type="submit" name="btnSubmit" style="width:100px; height:50px;" value="Submit" />
-  </div>
-</form>
+    <br>
+    <br>
+
+    Name:
+    <input type="text" name="name" required>
+    <br>
+    <br>
+
+    <input type="submit" name="btnSubmit" style="width:100px; height:50px;" value="Submit" />
+
+    </form>
