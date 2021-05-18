@@ -1,8 +1,9 @@
-<% @appointments.each do |appointment| %>
+<% @appointment.each do |appointment| %>
 
-    Appointment: <%= appointment.id %><br>
+    Appointment: <%= appointment.id %><br><br>
     Date: <%= appointment.date %><br>
     Time: <%= appointment.time %><br>
     Email: <%= appointment.email %><br>
+    Name: <%= appointment.name %><br><br>
 
 <% end %>

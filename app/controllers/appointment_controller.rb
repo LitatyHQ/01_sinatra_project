@@ -5,13 +5,14 @@ class AppointmentController < ApplicationController
     end
 
     post '/appointments' do
-        @appointments = Appointment.create(
+        @appointment = Appointment.create(
             date: params[:date], 
             time: params[:time], 
             email: params[:email], 
-            name: params[:name]
+            name: params[:name],
+            user_id: session[:user_id]
         )
-        redirect "/appointments/#{@appointments.id}"
+        redirect "/appointments/#{@appointment.id}"
     end
 
     get '/appointments/:id' do
@@ -20,16 +21,21 @@ class AppointmentController < ApplicationController
     end
 
     get '/appointments' do
-        @appointments = Appointment.all
+        @appointment = Appointment.all
         erb :'/appointments/index'
     end
 
     get '/appointments/:id/edit' do
         @appointment = Appointment.find(params[:id])
-        redirect '/appointments/edit'
+        if @appointment && session[:user_id] == @appointment.user_id
+            erb :'/appointments/edit'
+
+        else
+            redirect "appointments/new"
+        end
     end
 
-    post '/appointments/:id' do
+    patch '/appointments/:id' do
         @appointment = Appointment.find(params[:id])
         @appointment.update(
             date: params[:date], 
@@ -37,7 +43,7 @@ class AppointmentController < ApplicationController
             email: params[:email], 
             name: params[:name]
             )
-            redirect "/appointments/#{@appointment.id}/edit"
+            redirect "/appointments/#{@appointment.id}"
     end
 
     delete '/appointments/:id' do

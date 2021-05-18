@@ -1,29 +1,27 @@
 <h1> Make changes to your appointment: </h1>
 
 <form action="/appointments/<%= @appointment.id %>" method="POST">
-    <f.input :appointment_id, :type => "hidden" name="_method" value="patch">
+    <input type ="hidden" name="_method" value="patch">
 
-    Date:  
-    <input type="date" value="<%= @appointment.date %>" name="date"><span class="validity"></span>
-    <br>
-    <br>
-    
-    Time: 
-    <input id="appt-time" type="time" value="<%= @appointment.time %>" name="appt-time" min="08:00" max="20:00" required>
-    <br>
-    <br>
+    Date:
+    <input type="date" name="date" value="<%= @appointment.date %>" required>
+<br>
+<br>
 
-    Email: 
-    <input type="email" value="<%= @appointment.email %>" placeholder="sophie@example.com">
-    <br>
-    <br>
+Time
+    <input type="time" name="time" value="<%= @appointment.time %>" min="08:00" max="20:00" required>
+<br>
+<br>
 
-    Insurance:  
-    <input type=text value="<%= @appointment.insurance %>" name="insurance">
-    <br>
-    &emsp;&emsp;&emsp;&nbsp;Company, Policy number. If you prefer to be billed later, submit N/A.
-    <br>
-    <p>
+Email:
+    <input type="email" name="email" value="<%= @appointment.email %>" required>
+<br>
+<br>
+
+Name:
+<input type="text" name="name" value="<%= @appointment.name %>" required>
+<br>
+<br>
 
     <input type="submit" name="btnSubmit" style="width:100px; height:50px;" value="Submit" />
 <form> 
